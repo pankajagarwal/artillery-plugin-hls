@@ -8,7 +8,8 @@ var debug = require('debug')('hls');
 var joinURI = function(absolute, relative) {
 	var parse = url.parse(absolute);
 	parse.pathname = path.join(parse.pathname, relative);
-	return url.format(parse);
+	console.log(parse.protocol + '//' + parse.host + parse.pathname);
+	return parse.protocol + '//' + parse.host + parse.pathname;
 };
 
 
